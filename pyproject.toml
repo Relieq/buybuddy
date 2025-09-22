@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "buybuddy"
+version = "0.1.0"
+description = "BuyBuddy — Shopping agent playground (ADK + MCP + A2A + AP2)"
+authors = [{name = "Relieq"}]
+requires-python = ">=3.12"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[project.scripts]
+buybuddy = "apps.buyer_agent.main:app"
+
+[tool.ruff]
+line-length = 120
+
+[tool.black]
+line-length = 120
